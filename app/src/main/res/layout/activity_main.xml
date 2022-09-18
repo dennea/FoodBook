@@ -6,18 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical">
-
-
     <LinearLayout
-        android:id="@+id/mainLayout"
+        android:id="@+id/addEditButtonLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
-        <ListView
-            android:id="@+id/cityListViewId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+        android:orientation="horizontal" >
         <Button
             android:id="@+id/addButton"
             android:layout_width="wrap_content"
@@ -30,50 +23,25 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="edit" />
-
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/addLayout"
+        android:id="@+id/mainLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical" >
-        <EditText
-            android:id="@+id/foodNameText"
+
+        <ListView
+            android:id="@+id/cityListViewId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="20"
-            android:hint="Food Name"/>
-        <EditText
-            android:id="@+id/foodDescriptionText"
+            />
+
+        <TextView
+            android:id="@+id/totalCostText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="20"
-            android:hint="Description"/>
-        <EditText
-            android:id="@+id/foodDateText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="20"
-            android:hint="Expiry Date "/>
-        <EditText
-            android:id="@+id/foodAmountText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="20"
-            android:hint="Amount"/>
-        <EditText
-            android:id="@+id/foodCostText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="20"
-            android:hint="Cost"/>
-        <Button
-            android:id="@+id/submitButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Submit"
-            android:layout_weight="1"/>
+            />
     </LinearLayout>
 
 </LinearLayout>
