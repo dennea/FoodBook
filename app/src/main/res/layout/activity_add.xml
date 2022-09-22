@@ -24,6 +24,10 @@
             android:layout_height="10dp"
             android:layout_weight="10"
             android:hint="Description"/>
+        <Spinner
+            android:id="@+id/locationSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
         <EditText
             android:id="@+id/foodDateText"
             android:layout_width="match_parent"

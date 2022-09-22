@@ -1,20 +1,18 @@
 package com.example.dennea_foodbook;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.io.Serializable;
 
 // This is the food class. It stores all of the information for the food that the customer adds to
 // the list :))
-public class Food {
+public class Food { //implements Serializable {
     private String name;
     private String description;
-    private Date date;
-    private Location location;
+    private String date;
+    private String location;
     private int count;
     private int cost;
 
-    public Food(String name, String description, Date date, Location location, int count, int cost){
+    public Food(String name, String description, String date, String location, int count, int cost) {
         this.name = name;
         this.description = description;
         this.date = date;
@@ -23,35 +21,51 @@ public class Food {
         this.cost = cost;
     }
 
-    public void updateName(String newName){
-        this.name = newName;
+    public String getName() {
+        return name;
     }
 
-    public void updateDescription(String newDescription){
-        this.description = newDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void updateDate(Date newDate){
-        this.date = newDate;
+    public String getDate() {
+        return date;
     }
 
-    public void updateLocation(Location newLocation){
-        this.location = newLocation;
+    public String getLocation() {
+        return location;
     }
 
-    public void updateCount(int newCount){
-        this.count = newCount;
+    public int getCount() {
+        return count;
     }
 
-    public void updateCost(int newCost){
-        this.cost = newCost;
+    public int getCost() {
+        return cost;
     }
 
-    public int getCost(){
-        return this.cost;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getCount(){
-        return this.count;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
     }
 }

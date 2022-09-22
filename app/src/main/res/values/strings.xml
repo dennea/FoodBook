@@ -1,3 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">dennea-FoodBook</string>
+<string name="app_name">dennea-FoodBook</string>
+<string-array name="location_array">
+    <item>Fridge</item>
+    <item>Freezer</item>
+    <item>Pantry</item>
+</string-array>
 </resources>
