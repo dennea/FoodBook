@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView foodList;
     private Button addFoodButton;
     private FoodAdapter foodAdapter;
+    private TextView costText;
     private static ArrayList<Food> dataList = new ArrayList<>();
 
 
@@ -32,19 +33,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // for testing purposes only
-        String []food = {"Apple", "Orange", "Cereal"};
-        String []description = {"4","5","4"};
-        String []date = {"4","5","4"};
-        String []location = {"4","5","4"};
-        String []count = {"1","5","2"};
-        String []cost = {"4","5","4"};
-
         foodList = findViewById(R.id.foodListViewId);
+        costText = findViewById(R.id.totalCostText);
 
-        for (int i = 0; i < food.length; i++){
-            //dataList.add(new Food(food[i],description[i],date[i],location[i],Integer.parseInt(count[i]),Integer.parseInt(cost[i])));
-        }
         foodAdapter = new FoodAdapter(this, dataList);
         foodList.setAdapter(foodAdapter);
         addFoodButton = findViewById(R.id.addButton);
@@ -53,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         onClickFood();
         deleteFood();
         updateFood();
+        displayTotalCost();
     }
 
     public void getNewFood() {
@@ -105,6 +97,16 @@ public class MainActivity extends AppCompatActivity {
             String positionEdit = intent.getStringExtra("positionEdit");
             dataList.set(Integer.parseInt(positionEdit),newEditFood);
         }
+
+    }
+
+    public void displayTotalCost(){
+        int cost = 0;
+        for (int i= 0; i< dataList.size(); i++) {
+            cost += (dataList.get(i).getCost() * dataList.get(i).getCount());
+        }
+        String costTextString = "Total Cost: $" + String.valueOf(cost);
+        costText.setText(costTextString);
 
     }
 }
