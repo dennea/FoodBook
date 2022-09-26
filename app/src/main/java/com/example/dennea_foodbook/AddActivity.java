@@ -12,6 +12,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
 
+/*
+This is the AddActivity class. This is teh activity that the user is directed to when they
+want at add a food or edit a food :)
+ */
+
 public class AddActivity extends AppCompatActivity {
     EditText foodNameText, foodDescriptionText, foodAmountText, foodCostText;
     Button submitButton, cancelButton;
@@ -48,6 +53,7 @@ public class AddActivity extends AppCompatActivity {
         onClickCancel();
     }
     private void editOrAdd() {
+        // handle weather we are editing an existing food or adding a new one
         Intent intent = getIntent();
         String editOrAdd = intent.getStringExtra("editOrAdd");
         if (editOrAdd.equals("edit")){
@@ -82,8 +88,6 @@ public class AddActivity extends AppCompatActivity {
             String year = String.valueOf(datePicker.getYear());
             String stringDate = year + "-" + month + "-" + day;
 
-            // pass data from one activity to another:
-            // https://codingwitht.com/how-to-pass-data-from-one-activity-to-another-in-android-studio/
             // send the data back to the main activity
             if (foodCost.matches("-?\\d+(\\.\\d+)?") && foodAmount.matches("-?\\d+(\\.\\d+)?")){
                 Intent switchActivityIntent = new Intent(this, MainActivity.class);

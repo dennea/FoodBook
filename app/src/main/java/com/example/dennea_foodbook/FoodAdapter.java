@@ -11,7 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
-
+/*
+This is the FoodAdapter class. Connects the list that displays the food :))
+ */
 public class FoodAdapter extends ArrayAdapter<Food> {
     private Context context;
     private ArrayList<Food> dataList;

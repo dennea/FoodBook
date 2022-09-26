@@ -1,10 +1,8 @@
 package com.example.dennea_foodbook;
 
-import java.io.Serializable;
-
 // This is the food class. It stores all of the information for the food that the customer adds to
 // the list :))
-public class Food { //implements Serializable {
+public class Food {
     private String name;
     private String description;
     private String date;
@@ -47,25 +45,5 @@ public class Food { //implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
-
-    public void setCost(int cost) {
-        this.cost = cost;
     }
 }

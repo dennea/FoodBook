@@ -9,6 +9,10 @@ import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
+/*
+This is the ViewActivity class. this is the activity that allows users to view the details of the
+food :))
+ */
 
 public class ViewActivity extends AppCompatActivity {
     private FloatingActionButton deleteButton;
@@ -64,6 +68,7 @@ public class ViewActivity extends AppCompatActivity {
     }
 
     public void onBackClick(){
+        // go back to main screen
         backButton.setOnClickListener(view -> {
             Intent switchActivityIntent = new Intent(this, MainActivity.class);
             startActivity(switchActivityIntent);
@@ -71,6 +76,7 @@ public class ViewActivity extends AppCompatActivity {
     }
 
     public void onDeleteClick(){
+        // delete a food
         deleteButton.setOnClickListener(view -> {
             Intent intent = getIntent();
             String position = intent.getStringExtra("position");
@@ -81,6 +87,7 @@ public class ViewActivity extends AppCompatActivity {
     }
 
     public void onEditClick(){
+        // edit a food
         editButton.setOnClickListener(view -> {
             Intent intent = getIntent();
             String positionEdit = intent.getStringExtra("position");

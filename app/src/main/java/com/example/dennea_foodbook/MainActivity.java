@@ -16,9 +16,7 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-// myTextBox.setText("My Product Description");
-// switch between activities: https://learntodroid.com/how-to-switch-between-activities-in-android/
-// https://developer.android.com/develop/ui/views/components/dialogs
+// This is the Main Activity that handles the main screen of the app
 
 public class MainActivity extends AppCompatActivity {
     private ListView foodList;
@@ -59,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickAddFood() {
+        // go to add food activity to put in new info
         addFoodButton.setOnClickListener(view -> {
             Intent switchActivityIntent = new Intent(this, AddActivity.class);
             switchActivityIntent.putExtra("editOrAdd","add");
@@ -67,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickFood() {
+        // when a food is pressed go to the view activity
         foodList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void deleteFood() {
+        // delete a food from the list
         Intent intent = getIntent();
         String position = intent.getStringExtra("position");
         if (position != null) {
@@ -89,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void updateFood() {
+        // we edited a food, now update it in the list
         Intent intent = getIntent();
         String editFood = intent.getStringExtra("editFood");
         if (editFood != null) {
@@ -101,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayTotalCost(){
+        // calculate and display the cost :))
         int cost = 0;
         for (int i= 0; i< dataList.size(); i++) {
             cost += (dataList.get(i).getCost() * dataList.get(i).getCount());
